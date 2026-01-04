@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terapia de Lenguaje en Casa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Guía breve y segura · 5–10 minutos</p>
+        <h1>Terapia de Lenguaje en Casa</h1>
+        <p class="subtitle">Asistente para madres/cuidadoras. Sin diagnósticos ni medicación. Refuerza, no reemplaza terapia profesional.</p>
+        <div class="tags">
+          <span class="tag">Síndrome de Down</span>
+          <span class="tag">Sesiones cortas</span>
+          <span class="tag">Repetible y seguro</span>
+        </div>
+      </div>
+      <div class="hero-note">
+        <p class="note-title">Protocolo de seguridad</p>
+        <ul>
+          <li>Si hay regresión, no responde a sonidos, tos/atragantamientos frecuentes: pide evaluación profesional/urgencias.</li>
+          <li>Nunca culpar ni juzgar. Refuerza cualquier intento.</li>
+          <li>AAC (gestos, fotos, pictos) es válido en cualquier nivel.</li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Evalúa en 30 segundos</h2>
+      <form id="session-form" class="form-grid">
+        <label>
+          Edad del niño (años)
+          <input type="number" id="age" name="age" min="0" max="12" placeholder="4" required>
+        </label>
+
+        <label>
+          ¿Cómo se comunica hoy?
+          <select id="communication" name="communication" required>
+            <option value="palabras">Palabras</option>
+            <option value="gestos">Gestos o señas</option>
+            <option value="sonidos">Sonidos/vocalizaciones</option>
+            <option value="mirada">Mirada/atención conjunta</option>
+          </select>
+        </label>
+
+        <label>
+          Motivadores favoritos
+          <input type="text" id="motivators" name="motivators" placeholder="burbujas, música, comida, pelotas" required>
+        </label>
+
+        <label>
+          Nivel sugerido (editable)
+          <select id="level" name="level" required>
+            <option value="1">1 — Conexión y atención conjunta</option>
+            <option value="2">2 — Imitación motora y vocal básica</option>
+            <option value="3">3 — Pedir con gestos/elección</option>
+            <option value="4">4 — Comprensión de órdenes de 1 paso</option>
+            <option value="5">5 — Primeras palabras funcionales</option>
+            <option value="6">6 — Gesto + palabra intencional</option>
+            <option value="7">7 — Frases de 2 palabras</option>
+            <option value="8">8 — Órdenes de 2 pasos y conceptos</option>
+            <option value="9">9 — Conversación funcional simple</option>
+            <option value="10">10 — Narración simple y claridad</option>
+          </select>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" id="redFlag" name="redFlag">
+          Señales de alarma (regresión, no responde a sonidos, tos/atragantamientos frecuentes, cambios bruscos)
+        </label>
+
+        <button type="submit" class="primary">Generar sesión de hoy</button>
+      </form>
+      <p class="helper">Tiempo sugerido: 5–10 minutos. Sube de nivel solo si cumple objetivo en 3 sesiones con ayuda mínima. Baja si hay frustración o falla 2 veces seguidas.</p>
+    </section>
+
+    <section id="plan" class="card plan">
+      <div class="plan-header">
+        <div>
+          <p class="eyebrow">Plan guiado</p>
+          <h2 id="plan-title">NIVEL 5 — Objetivo: provocar y reforzar 3 intentos de palabra útil</h2>
+          <p id="plan-subtitle" class="subtitle">Personaliza con motivadores: burbujas, música, comida pequeña, pelotas.</p>
+        </div>
+        <div class="badge">5–10 min</div>
+      </div>
+
+      <div class="plan-grid">
+        <div class="plan-block">
+          <h3>1) Materiales caseros</h3>
+          <ul id="materials"></ul>
+        </div>
+        <div class="plan-block">
+          <h3>2) Pasos</h3>
+          <ol id="steps"></ol>
+        </div>
+        <div class="plan-block">
+          <h3>3) Señales de éxito</h3>
+          <ul id="signals"></ul>
+        </div>
+        <div class="plan-block">
+          <h3>4) Más fácil</h3>
+          <ul id="easier"></ul>
+        </div>
+        <div class="plan-block">
+          <h3>5) Un poco más difícil</h3>
+          <ul id="harder"></ul>
+        </div>
+        <div class="plan-block">
+          <h3>6) Si se frustra</h3>
+          <ol id="frustration"></ol>
+        </div>
+        <div class="plan-block">
+          <h3>7) Registro rápido</h3>
+          <p id="logline" class="logline"></p>
+          <p id="tomorrow" class="tomorrow"></p>
+        </div>
+      </div>
+      <div id="redFlagNote" class="alert" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="card footer-note">
+      <h3>Reglas clave</h3>
+      <ul>
+        <li>No diagnósticos ni medicación. Si dudas, consulta a un profesional.</li>
+        <li>Refuerza cualquier intento (sonido, gesto, mirada). Sin juicios.</li>
+        <li>AAC es válido siempre: gestos, fotos, pictogramas, elección de opciones.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
